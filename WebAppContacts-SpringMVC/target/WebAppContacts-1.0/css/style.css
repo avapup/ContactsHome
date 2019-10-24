@@ -1,0 +1,185 @@
+*, :after, :before { box-sizing: border-box; }
+
+/*
+========================================================================================================================
+    GENERAL
+========================================================================================================================
+*/
+
+body {
+    background-color: cadetblue;
+    font-family: tahoma, sans-serif;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+h2 {
+    margin-left: 40px;
+}
+
+h3 {
+    margin-left: 20px;
+}
+
+
+
+/*
+========================================================================================================================
+    TABLE
+========================================================================================================================
+*/
+
+.contactsTable {
+    border-collapse: collapse;
+    margin-left: 20px;
+
+}
+
+th {
+    background-color: #80ced6;
+    text-align: center;
+    font-size: 16px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px 20px 10px 20px;
+
+}
+
+td {
+    background-color: #d5f4e6;
+    text-align: left;
+    font-size:15px;
+    padding: 7px;
+    border-collapse: separate;
+    border-bottom-color: black;
+    border-style: solid;
+    border-width: 1px;
+    white-space: nowrap;
+    padding: 3px 10px 3px 10px;
+
+}
+
+.contactsTable tr:hover td {
+    background-color:#80ced6;
+}
+
+.tableActionColumn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tableIdColumn {
+    width: 50px;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.tableNumberColumn {
+    text-align: center;
+}
+
+/*
+========================================================================================================================
+    FORM
+========================================================================================================================
+*/
+
+.editForm {
+    display: grid;
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px solid #c1c1c1;
+    /*margin: 2rem auto 0 auto;*/
+    margin-left: 20px;
+    max-width: 400px;
+}
+
+.editForm input {
+    background: #fff;
+    border: 1px solid #9c9c9c;
+}
+
+.editForm button {
+    background: lightgrey;
+    padding: 1em;
+    width: 50%;
+    border: 0;
+}
+/*
+.editForm button:hover {
+    background: silver;
+}
+
+.editForm label {
+    padding: 1em 1em 1em 0;
+}
+*/
+.editForm input {
+    padding: 1em;
+    margin-bottom: 0.5rem;
+}
+.editForm input:focus {
+    outline: 3px solid gold;
+}
+
+/*
+========================================================================================================================
+    BUTTON
+========================================================================================================================
+*/
+.myButton {
+
+    background-color: darkslategrey;
+
+    border-radius:6px;
+    border:1px solid #80ced6;
+    display:inline-block;
+
+    color: floralwhite;
+    font-family: tahoma, sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    text-align: center;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration:none;
+
+}
+
+.tableButton {
+    width: 80px;
+}
+
+
+/*
+========================================================================================================================
+    PAGINATION
+========================================================================================================================
+*/
+
+.pagination {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: darkslategrey;
+    color: floralwhite;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #d5f4e6;
+}

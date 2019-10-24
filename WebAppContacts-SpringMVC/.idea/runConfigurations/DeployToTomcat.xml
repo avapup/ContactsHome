@@ -1,0 +1,69 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DeployToTomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="false">
+    <option name="LOCAL" value="false" />
+    <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+    <deployment>
+      <artifact name="WebAppContacts:war">
+        <settings>
+          <option name="CONTEXT_PATH" value="/Contacts" />
+        </settings>
+      </artifact>
+    </deployment>
+    <server-settings>
+      <data>
+        <option name="targets">
+          <list>
+            <WatchedTargetModelImpl>
+              <option name="name" value="CONTEXT_XML" />
+              <option name="transportStagingTarget">
+                <TransportTarget>
+                  <option name="id" value="0f851194-9dd1-46c2-a0c6-55a358ec7072" />
+                  <id>0f851194-9dd1-46c2-a0c6-55a358ec7072</id>
+                </TransportTarget>
+              </option>
+              <option name="watchedLocalPath" value="" />
+              <watched-path />
+              <name>CONTEXT_XML</name>
+              <transport-target>
+                <TransportTarget>
+                  <option name="id" value="0f851194-9dd1-46c2-a0c6-55a358ec7072" />
+                  <id>0f851194-9dd1-46c2-a0c6-55a358ec7072</id>
+                </TransportTarget>
+              </transport-target>
+            </WatchedTargetModelImpl>
+            <StagingTargetModelImpl>
+              <option name="name" value="STAGING" />
+              <option name="stagingRemotePath" value="" />
+              <option name="transportStagingTarget">
+                <TransportTarget>
+                  <option name="id" value="8d2fa33f-fc6f-4256-a950-29ac54cd697c" />
+                  <id>8d2fa33f-fc6f-4256-a950-29ac54cd697c</id>
+                </TransportTarget>
+              </option>
+              <staging-path />
+              <name>STAGING</name>
+              <transport-target>
+                <TransportTarget>
+                  <option name="id" value="8d2fa33f-fc6f-4256-a950-29ac54cd697c" />
+                  <id>8d2fa33f-fc6f-4256-a950-29ac54cd697c</id>
+                </TransportTarget>
+              </transport-target>
+            </StagingTargetModelImpl>
+          </list>
+        </option>
+      </data>
+    </server-settings>
+    <predefined_log_file enabled="true" id="Tomcat" />
+    <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="8000" />
+      <option name="LOCAL" value="false" />
+    </RunnerSettings>
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="WebAppContacts:war" />
+      </option>
+    </method>
+  </configuration>
+</component>
