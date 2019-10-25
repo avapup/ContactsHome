@@ -15,6 +15,7 @@
              scope="request"/>
 <jstl:url var="cssLink" value="/css/style.css"/>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title>ContactList</title>
@@ -23,45 +24,58 @@
 </head>
 <body>
 
-    <h1>List of Contacts</h1>
 
-    <jstl:url var="servlet" value="/contacts/new.html"/>
-    <h3><a href="${servlet}" class="myButton">add a new contact</a></h3>
 
-    <table class="contactsTable">
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone Number</th>
-            <th>Action</th>
-        </tr>
 
-        <jstl:forEach var="contact" items="${contactList}">
-            <tr>
-                <td class="tableIdColumn">${contact.contactId}</td>
-                <td><jstl:out value="${contact.person.firstName}"/></td>
-                <td><jstl:out value="${contact.person.lastName}"/></td>
-                <td class="tableNumberColumn"><jstl:out value="${contact.phoneNumber}"/></td>
-                <td>
-                    <div class="tableActionColumn">
-                        <jstl:url var="editLink" value="/contacts/edit.html">
-                            <jstl:param name="id" value="${contact.contactId}"/>
-                        </jstl:url>
-                        <a href="${editLink}" class="myButton tableButton">edit</a>
+        <h1>${localizedExpressions[0]}</h1>
 
-                        <jstl:url var="deleteLink" value="/contacts/delete.html"/>
-                        <form method="post" action="${deleteLink}">
-                            <input type="hidden" name="id" value="${contact.contactId}"/>
-                            <input type="submit" class="myButton tableButton" value="delete"/>
-                        </form>
-                    </div>
 
-                </td>
-            </tr>
-        </jstl:forEach>
+        <jstl:url var="servlet" value="/contacts/new.html"/>
+        <h2><a href="${servlet}" class="myButton">${localizedExpressions[1]}</a></h2>
 
-    </table>
+        <table class="contactsTable">
+            <thead>
+                <tr>
+                    <jstl:forEach var="expression" items="${localizedExpressions}" begin="2" end="6">
+                        <th>${expression}</th>
+                    </jstl:forEach>
+
+                </tr>
+            </thead>
+            <jstl:forEach var="contact" items="${contactList}">
+                <tbody>
+                    <tr>
+                        <td class="tableIdColumn">${contact.contactId}</td>
+                        <td><jstl:out value="${contact.person.firstName}"/></td>
+                        <td><jstl:out value="${contact.person.lastName}"/></td>
+                        <td class="tableNumberColumn">
+                            <jstl:out value="${contact.phoneNumber.prefix.toString()}
+                                                ${contact.phoneNumber.number.substring(0, 3)}
+                                                ${contact.phoneNumber.number.substring(3, 6)}
+                                                ${contact.phoneNumber.number.substring(6, 9)}"/>
+                        </td>
+                        <td>
+                            <div class="tableActionColumn">
+                                <jstl:url var="editLink" value="/contacts/edit.html">
+                                    <jstl:param name="id" value="${contact.contactId}"/>
+                                </jstl:url>
+                                <a href="${editLink}" class="myButton tableButton editButton">${localizedExpressions[7]}</a>
+
+                                <jstl:url var="deleteLink" value="/contacts/delete.html"/>
+                                <form method="post" action="${deleteLink}">
+                                    <input type="hidden" name="id" value="${contact.contactId}"/>
+                                    <input type="submit" class="myButton tableButton" value="${localizedExpressions[8]}"/>
+                                </form>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </jstl:forEach>
+
+        </table>
+
+
 
     <div class="pagination">
         <a href="#">&laquo;</a>

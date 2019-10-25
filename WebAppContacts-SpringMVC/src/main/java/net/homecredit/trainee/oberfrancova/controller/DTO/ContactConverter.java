@@ -10,11 +10,16 @@ public class ContactConverter {
 
     public Contact convert(ContactForm contactForm) {
 
+        //contactForm.setPhoneNumber(contactForm.getPrefix(), contactForm.getNumber());
+
         Contact contact = new Contact();
 
         contact.setContactId(contactForm.getContactId());
         contact.setPerson(new Person(contactForm.getFirstName(), contactForm.getLastName()));
-        contact.setPhoneNumber(new PhoneNumber(contactForm.getPhoneNumber()));
+        contact.setPhoneNumber(new PhoneNumber(contactForm.getPrefix() + contactForm.getNumber()));
+
+        //contact.getPhoneNumber().setPrefix(contact.getPhoneNumber().getPrefix());
+        //contact.getPhoneNumber().setNumber(contact.getPhoneNumber().getNumber());
 
         return contact;
 
@@ -27,7 +32,9 @@ public class ContactConverter {
         contactForm.setContactId(entity.getContactId());
         contactForm.setFirstName(entity.getPerson().getFirstName());
         contactForm.setLastName(entity.getPerson().getLastName());
-        contactForm.setPhoneNumber(entity.getPhoneNumber().getPhoneNumber());
+        contactForm.setPrefix(entity.getPhoneNumber().getPrefix().toString());
+        contactForm.setNumber(entity.getPhoneNumber().getNumber());
+        //contactForm.setPhoneNumber(contactForm.getPrefix().toString(), contactForm.getNumber());
 
         return contactForm;
 

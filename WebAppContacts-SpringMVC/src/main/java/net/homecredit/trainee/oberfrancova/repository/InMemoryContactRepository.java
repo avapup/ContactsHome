@@ -151,7 +151,9 @@ public class InMemoryContactRepository implements ContactRepository {
 
         contactToEdit.getPerson().setFirstName(contact.getPerson().getFirstName());
         contactToEdit.getPerson().setLastName(contact.getPerson().getLastName());
-        contactToEdit.getPhoneNumber().setPhoneNumber(contact.getPhoneNumber().getPhoneNumber());
+        contactToEdit.getPhoneNumber().setPrefix(contact.getPhoneNumber().getPrefix());
+        contactToEdit.getPhoneNumber().setNumber(contact.getPhoneNumber().getNumber());
+        contactToEdit.getPhoneNumber().setPhoneNumber(contactToEdit.getPhoneNumber().getPrefix().toString(), contactToEdit.getPhoneNumber().getNumber());
 
         return contactToEdit;
     }

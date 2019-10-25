@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ResourceBundleManager">
+    <file url="file://$PROJECT_DIR$/src/main/resources/messa_cs_cz.properties" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/messa_cs_de.properties" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/messa_cs_sk.properties" />
     <file url="file://$PROJECT_DIR$/src/main/resources/messages.properties" />
     <file url="file://$PROJECT_DIR$/src/main/resources/messages_de.properties" />
     <file url="file://$PROJECT_DIR$/src/main/resources/messages_sk.properties" />
